@@ -1,0 +1,143 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+
+@custom-variant dark (&:is(.dark *));
+
+:root {
+  /* Updated to Dyvyn dark theme colors */
+  --background: #0b0f14;
+  --foreground: #ffffff;
+  --card: rgba(255, 255, 255, 0.1);
+  --card-foreground: #f1f5f9;
+  --popover: rgba(255, 255, 255, 0.2);
+  --popover-foreground: #ffffff;
+  --primary: #7f5af0;
+  --primary-foreground: #ffffff;
+  --secondary: #00d4ff;
+  --secondary-foreground: #0b0f14;
+  --muted: #f1f5f9;
+  --muted-foreground: #0b0f14;
+  --accent: #f5c768;
+  --accent-foreground: #0b0f14;
+  --destructive: #dc2626;
+  --destructive-foreground: #ffffff;
+  --border: rgba(255, 255, 255, 0.2);
+  --input: rgba(255, 255, 255, 0.1);
+  --ring: rgba(255, 255, 255, 0.3);
+  --chart-1: #7f5af0;
+  --chart-2: #00d4ff;
+  --chart-3: #f5c768;
+  --chart-4: #ffffff;
+  --chart-5: #f1f5f9;
+  --radius: 0.5rem;
+  --sidebar: #0b0f14;
+  --sidebar-foreground: #ffffff;
+  --sidebar-primary: #7f5af0;
+  --sidebar-primary-foreground: #ffffff;
+  --sidebar-accent: #f5c768;
+  --sidebar-accent-foreground: #0b0f14;
+  --sidebar-border: rgba(255, 255, 255, 0.2);
+  --sidebar-ring: rgba(255, 255, 255, 0.3);
+}
+
+.dark {
+  /* Dark mode uses same colors as root for consistent Dyvyn theme */
+  --background: #0b0f14;
+  --foreground: #ffffff;
+  --card: rgba(255, 255, 255, 0.1);
+  --card-foreground: #f1f5f9;
+  --popover: rgba(255, 255, 255, 0.2);
+  --popover-foreground: #ffffff;
+  --primary: #7f5af0;
+  --primary-foreground: #ffffff;
+  --secondary: #00d4ff;
+  --secondary-foreground: #0b0f14;
+  --muted: rgba(241, 245, 249, 0.6);
+  --muted-foreground: rgba(241, 245, 249, 0.8);
+  --accent: #f5c768;
+  --accent-foreground: #0b0f14;
+  --destructive: #dc2626;
+  --destructive-foreground: #ffffff;
+  --border: rgba(255, 255, 255, 0.2);
+  --input: rgba(255, 255, 255, 0.1);
+  --ring: rgba(255, 255, 255, 0.3);
+  --chart-1: #7f5af0;
+  --chart-2: #00d4ff;
+  --chart-3: #f5c768;
+  --chart-4: #ffffff;
+  --chart-5: #f1f5f9;
+  --sidebar: #0b0f14;
+  --sidebar-foreground: #ffffff;
+  --sidebar-primary: #7f5af0;
+  --sidebar-primary-foreground: #ffffff;
+  --sidebar-accent: #f5c768;
+  --sidebar-accent-foreground: #0b0f14;
+  --sidebar-border: rgba(255, 255, 255, 0.2);
+  --sidebar-ring: rgba(255, 255, 255, 0.3);
+}
+
+@theme inline {
+  /* Updated font variables for Dyvyn typography */
+  --font-sans: var(--font-montserrat);
+  --font-serif: var(--font-vidaloka);
+  --font-mono: var(--font-geist-mono);
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --color-chart-1: var(--chart-1);
+  --color-chart-2: var(--chart-2);
+  --color-chart-3: var(--chart-3);
+  --color-chart-4: var(--chart-4);
+  --color-chart-5: var(--chart-5);
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+  --color-sidebar: var(--sidebar);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-ring: var(--sidebar-ring);
+}
+
+/* Added custom gradient utilities for Dyvyn branding */
+@layer utilities {
+  .gradient-dyvyn {
+    background: linear-gradient(135deg, #7f5af0 0%, #00d4ff 100%);
+  }
+
+  .gradient-dyvyn-text {
+    background: linear-gradient(135deg, #7f5af0 0%, #00d4ff 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+}
